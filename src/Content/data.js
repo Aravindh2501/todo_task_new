@@ -2,10 +2,12 @@ export const categories = [
   { label: "All", value: "all" },
   { label: "Work", value: "work" },
   { label: "Personal", value: "personal" },
+  { label: "Shopping", value: "shopping" },
 ];
 export const category = [
   { label: "Work", value: "work" },
   { label: "Personal", value: "personal" },
+  { label: "Shopping", value: "shopping" },
 ];
 
 export const filter = [

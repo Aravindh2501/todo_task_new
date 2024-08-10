@@ -1,7 +1,7 @@
 import React from "react";
-import { GrPowerReset } from "react-icons/gr";
+import { MdClose } from "react-icons/md";
 
-const SearchBar = ({ search, setSearch, handleSearch }) => {
+const SearchBar = ({ search, setSearch, handleSearchClose }) => {
   return (
     <div className="search_container">
       <input
@@ -11,9 +11,11 @@ const SearchBar = ({ search, setSearch, handleSearch }) => {
         placeholder="Search for a todo"
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button className="search_btn" onClick={handleSearch}>
-        <GrPowerReset />
-      </button>
+      {search && (
+        <button className="search_btn" onClick={handleSearchClose}>
+          <MdClose />
+        </button>
+      )}
     </div>
   );
 };

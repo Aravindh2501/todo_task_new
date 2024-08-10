@@ -38,7 +38,7 @@ const App = () => {
     setIsFilterShow(false);
   }, []);
 
-  const handleSearch = useCallback(() => {
+  const handleSearchClose = useCallback(() => {
     setSearch("");
   }, []);
 
@@ -110,39 +110,46 @@ const App = () => {
           <SearchBar
             search={search}
             setSearch={setSearch}
-            handleSearch={handleSearch}
+            handleSearchClose={handleSearchClose}
           />
-          <div className="filter_container">
-            <div className="filter_select">
-              <CategoryFilter
-                selectedCategory={selectedCategory}
-                isSelectShow={isSelectShow}
-                handleSelectToggle={handleSelectToggle}
-                categories={categories}
-                handleCategoryChange={handleCategoryChange}
-              />
-            </div>
-            <div className="filter_menu">
-              <div className="filter_icon">
-                <button className="filter_btn" onClick={handleFilterToggle}>
-                  <FcFilledFilter />
-                </button>
+          <div className="filter_box">
+            <h4 style={{ margin: "1rem 0 0.7rem", fontWeight: "500" }}>
+              Category
+            </h4>
+            <div className="filter_container">
+              <div className="filter_select">
+                <CategoryFilter
+                  selectedCategory={selectedCategory}
+                  isSelectShow={isSelectShow}
+                  handleSelectToggle={handleSelectToggle}
+                  categories={categories}
+                  handleCategoryChange={handleCategoryChange}
+                />
               </div>
-              {isFilterShow && (
-                <div className="filter_card">
-                  <ul className="filter_list">
-                    {filter.map((fill) => (
-                      <li
-                        key={fill.value}
-                        className={activeFilter === fill.value ? "active" : ""}
-                        onClick={() => handleFilterSelect(fill.value)}
-                      >
-                        {fill.name}
-                      </li>
-                    ))}
-                  </ul>
+              <div className="filter_menu">
+                <div className="filter_icon">
+                  <button className="filter_btn" onClick={handleFilterToggle}>
+                    <FcFilledFilter />
+                  </button>
                 </div>
-              )}
+                {isFilterShow && (
+                  <div className="filter_card">
+                    <ul className="filter_list">
+                      {filter.map((fill) => (
+                        <li
+                          key={fill.value}
+                          className={
+                            activeFilter === fill.value ? "active" : ""
+                          }
+                          onClick={() => handleFilterSelect(fill.value)}
+                        >
+                          {fill.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <TodoItem

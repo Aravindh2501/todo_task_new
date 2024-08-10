@@ -94,7 +94,9 @@ const App = () => {
                 className="ball"
                 style={{
                   background: isDarkMode ? "white" : "black",
-                  transform: isDarkMode ? "translateX(19px)" : "translateX(0)",
+                  transform: isDarkMode
+                    ? "translateX(0px)"
+                    : "translateX(19px)",
                 }}
               ></div>
               <img

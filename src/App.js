@@ -1,4 +1,10 @@
-import React, { useState, useCallback, useMemo, useEffect } from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useEffect,
+  useRef,
+} from "react";
 import { useTheme } from "./context/ThemeContext";
 import useTodos from "./hooks/useTodos";
 import SearchBar from "./components/SearchBar";
@@ -9,10 +15,12 @@ import TodoItem from "./components/TodoItem";
 import AddTodoForm from "./components/AddTodoForm";
 import moon from "./assets/moon.png";
 import sun from "./assets/contrast.png";
+import toast, { Toaster } from "react-hot-toast";
 
 const App = () => {
   const { isDarkMode, toggleTheme } = useTheme();
   const { todos, addTodo, deleteTodo, completeTodo } = useTodos();
+  const searchInputRef = useRef(null);
 
   const [isSelectShow, setIsSelectShow] = useState(false);
   const [isFilterShow, setIsFilterShow] = useState(false);
@@ -44,7 +52,10 @@ const App = () => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === "d") {
+      if (
+        event.key === "d" &&
+        document.activeElement !== searchInputRef.current
+      ) {
         toggleTheme();
       }
     };
@@ -73,6 +84,7 @@ const App = () => {
 
   return (
     <div className={`App ${isDarkMode ? "dark-theme" : ""}`}>
+      <Toaster />
       <div className="container">
         <div className="todo">
           <div className="todo_top">
@@ -111,6 +123,7 @@ const App = () => {
             search={search}
             setSearch={setSearch}
             handleSearchClose={handleSearchClose}
+            ref={searchInputRef}
           />
           <div className="filter_box">
             <h4 style={{ margin: "1rem 0 0.7rem", fontWeight: "500" }}>
@@ -157,7 +170,7 @@ const App = () => {
             completeTodo={completeTodo}
             deleteTodo={deleteTodo}
           />
-          <AddTodoForm handleAddTodo={addTodo} />
+          <AddTodoForm handleAddTodo={addTodo} toast={toast} />
         </div>
       </div>
     </div>

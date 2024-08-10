@@ -3,7 +3,7 @@ import { HiOutlinePlusSm } from "react-icons/hi";
 import Modal from "../Modal/Modal";
 import { useForm } from "react-hook-form";
 
-const AddTodoForm = ({ handleAddTodo }) => {
+const AddTodoForm = ({ handleAddTodo, toast }) => {
   const [isOpen, setIsOpen] = useState(false);
   const {
     register,
@@ -16,6 +16,7 @@ const AddTodoForm = ({ handleAddTodo }) => {
     handleAddTodo({ ...data, id: Date.now(), status: "active" });
     reset();
     setIsOpen(false);
+    // toast.success("Form is Added Successfully");
   };
 
   return (

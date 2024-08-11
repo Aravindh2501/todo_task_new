@@ -14,12 +14,18 @@
   --modal-btn-bg: var(--blue);
   --modal-btn-hover-bg: #0056b3;
   --modal-btn-text-color: var(--white);
+  --text-black: #000;
+  --text-white: #fff;
+  --bg-menu: #f5f5f5;
 }
 
 /* Dark theme */
 .dark-theme {
   --background: #0e141b;
+  --text-black: #fff;
+  --text-white: #000;
   --text-color: #fff;
+  --bg-menu: #0e141b;
   --card: #151f28;
   --text-grey: #c0c5c9;
   --bg-border: #555;
@@ -76,6 +82,103 @@
 .modal_content .error {
   color: red;
 }
+
+.todo_top_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.menu_card_logout {
+  position: absolute;
+  background: var(--card);
+  width: 13rem;
+  top: 48px;
+  z-index: 2;
+  border: 1px solid;
+  border-radius: 8px;
+  border: none;
+  box-shadow: var(--shadow);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+  z-index: 10;
+}
+
+.menu_card_logout ul {
+  padding: 5px;
+}
+
+.menu_card_logout ul li {
+  padding: 8px 11px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu_card_logout ul li:hover {
+  background: var(--bg-border);
+}
+
+
+.nav_profile {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.nav_profile:hover {
+  background: var(--bg-menu);
+}
+
+.nav_profile_logo {
+  width: 3.5rem;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid var(--bg-border);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  ;
+}
+
+.nav_profile_logo img {
+  width: 100%;
+}
+
+.nav_names {
+  margin-right: 2rem;
+}
+
+.nav_names h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-black);
+}
+
+.nav_names p {
+  font-weight: 500;
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-grey);
+}
+
+/* 
+.btn_logout {
+  border: none;
+  background: var(--blue);
+  padding: 10px 20px;
+  color: var(--modal-btn-text-color);
+  border-radius: 27px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+} */
 
 .form_group {
   margin-bottom: 15px;

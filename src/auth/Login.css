@@ -1,0 +1,96 @@
+.login {
+    display: flex;
+    height: 100vh;
+}
+
+.login_left {
+    width: 25%;
+    overflow: hidden;
+}
+
+.login_video {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_video video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.login_right {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login_card {
+    width: 27rem;
+    margin-left: 5rem;
+}
+
+.login_heading {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 29px;
+    font-family: var(--font-pop);
+    margin-bottom: 40px;
+    color: var(--black);
+}
+
+.login_form {
+    width: 100%;
+}
+
+.form_group {
+    margin-bottom: 15px;
+}
+
+.form_label {
+    display: block;
+    margin: 14px 0 4px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--text-grey);
+}
+
+.form_input {
+    width: 100%;
+    border: 1px solid var(--bg-border);
+    border-radius: 12px;
+    font-size: 16px;
+    height: 56px;
+    padding: 18px 20px;
+}
+
+.form_input:focus {
+    border-color: var(--blue);
+    outline: none;
+}
+
+.submit_button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--text-color);
+    color: var(--modal-btn-text-color);
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-white);
+    height: 56px;
+    margin: 20px 0;
+}
+
+
+.error_message {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}

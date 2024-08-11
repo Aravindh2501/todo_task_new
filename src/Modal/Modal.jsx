@@ -5,6 +5,8 @@ import { RiCloseLargeFill } from "react-icons/ri";
 const Modal = ({ isOpen, onClose, handleSubmit, register, errors }) => {
   if (!isOpen) return null;
 
+  const today = new Date().toISOString().split("T")[0];
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-card" onClick={(e) => e.stopPropagation()}>
@@ -21,7 +23,13 @@ const Modal = ({ isOpen, onClose, handleSubmit, register, errors }) => {
               <input
                 type="text"
                 name="title"
-                {...register("title", { required: "Title is required" })}
+                {...register("title", {
+                  required: "Title is required",
+                  minLength: {
+                    value: 5,
+                    message: "Title must be at least 5 characters long",
+                  },
+                })}
                 placeholder="Enter the title"
               />
               {errors.title && (
@@ -34,6 +42,10 @@ const Modal = ({ isOpen, onClose, handleSubmit, register, errors }) => {
                 name="description"
                 {...register("description", {
                   required: "Description is required",
+                  minLength: {
+                    value: 20,
+                    message: "Description must be at least 20 characters long",
+                  },
                 })}
                 placeholder="Enter the description"
               />
@@ -47,6 +59,7 @@ const Modal = ({ isOpen, onClose, handleSubmit, register, errors }) => {
                 type="date"
                 name="date"
                 {...register("date", { required: "Date is required" })}
+                min={today} // Disable past dates
               />
               {errors.date && (
                 <span className="error">{errors.date.message}</span>

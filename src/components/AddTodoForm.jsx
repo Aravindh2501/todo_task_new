@@ -16,7 +16,6 @@ const AddTodoForm = ({ handleAddTodo, toast }) => {
     handleAddTodo({ ...data, id: Date.now(), status: "active" });
     reset();
     setIsOpen(false);
-    // toast.success("Form is Added Successfully");
   };
 
   return (

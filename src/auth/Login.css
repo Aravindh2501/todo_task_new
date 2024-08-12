@@ -47,11 +47,11 @@
     width: 100%;
 }
 
-.form_group {
+.login_form .form_group {
     margin-bottom: 15px;
 }
 
-.form_label {
+.login_form .form_label {
     display: block;
     margin: 14px 0 4px;
     font-weight: bold;
@@ -60,7 +60,7 @@
     color: var(--text-grey);
 }
 
-.form_input {
+.login_form .form_input {
     width: 100%;
     border: 1px solid var(--bg-border);
     border-radius: 12px;
@@ -69,7 +69,7 @@
     padding: 18px 20px;
 }
 
-.form_input:focus {
+.login_form .form_input:focus {
     border-color: var(--blue);
     outline: none;
 }

@@ -29,7 +29,7 @@ const Login = () => {
     <div className="login">
       <div className="login_left">
         <div className="login_video">
-          <video src={video} autoPlay loop muted playsInline />
+          <video src={video} autoPlay loop muted playsInline preload="auto" />
         </div>
       </div>
       <div className="login_right">

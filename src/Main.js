@@ -13,6 +13,7 @@ import sun from "./assets/images/contrast.png";
 import toast, { Toaster } from "react-hot-toast";
 import { useAuth } from "./context/AuthContext";
 import { IoIosArrowDown } from "react-icons/io";
+import Footer from "./components/Footer";
 
 const Main = () => {
   const { isDarkMode, toggleTheme } = useTheme();
@@ -203,6 +204,7 @@ const Main = () => {
           />
           <AddTodoForm handleAddTodo={addTodo} toast={toast} />
         </div>
+        <Footer />
       </div>
     </div>
   );

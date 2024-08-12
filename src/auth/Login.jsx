@@ -34,7 +34,7 @@ const Login = () => {
       </div>
       <div className="login_right">
         <div className="login_card">
-          <h2 className="login_heading">Task Management</h2>
+          <h2 className="login_heading">Todo List</h2>
           <form
             className="login_form"
             onSubmit={handleSubmit(onSubmit)}

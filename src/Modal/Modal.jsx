@@ -59,7 +59,7 @@ const Modal = ({ isOpen, onClose, handleSubmit, register, errors }) => {
                 type="date"
                 name="date"
                 {...register("date", { required: "Date is required" })}
-                min={today} // Disable past dates
+                min={today}
               />
               {errors.date && (
                 <span className="error">{errors.date.message}</span>

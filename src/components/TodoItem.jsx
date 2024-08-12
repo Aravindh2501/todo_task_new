@@ -70,7 +70,7 @@ const TodoItem = ({ todos, completeTodo, deleteTodo }) => {
                 onClick={() => completeTodo(todo.id)}
                 disabled={todo.status === "completed"}
               >
-                Complete
+                Mark as complete
               </button>
               <button
                 className="btn_delete"

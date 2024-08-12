@@ -13,12 +13,17 @@ const useTodos = () => {
 
   const addTodo = (newTodo) => {
     setTodos((prevTodos) => [newTodo, ...prevTodos]);
-    toast.success("Form is Added Successfully");
+    toast.success("Todo added successfully!");
   };
 
   const deleteTodo = (id) => {
-    setTodos((prev) => prev.filter((todo) => todo.id !== id));
-    toast.error("Form is Deleted Successfully");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this todo?"
+    );
+    if (confirmDelete) {
+      setTodos((prev) => prev.filter((todo) => todo.id !== id));
+      toast.error("Todo deleted successfully!");
+    }
   };
 
   const completeTodo = (id) => {
@@ -27,7 +32,7 @@ const useTodos = () => {
         todo.id === id ? { ...todo, status: "completed" } : todo
       )
     );
-    toast("Good Job , Completed Successfully!", {
+    toast.success("Good job, completed successfully!", {
       icon: "👏",
     });
   };
